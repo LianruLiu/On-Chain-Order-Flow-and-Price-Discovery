@@ -1,0 +1,5 @@
+# Production data connectors — only needed when pointing the pipeline at
+# live feeds (see README "Setup"). Not required for run_analysis.py.
+-r requirements.txt
+web3>=6.0
+ccxt>=4.0

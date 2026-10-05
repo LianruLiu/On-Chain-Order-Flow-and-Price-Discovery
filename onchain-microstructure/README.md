@@ -68,6 +68,13 @@ pip install -r requirements.txt
 python run_analysis.py
 ```
 
+Live-data connectors (`web3`, `ccxt`) are deliberately *not* in
+`requirements.txt` — install them only when wiring up real feeds:
+
+```bash
+pip install -r requirements-prod.txt
+```
+
 To point at live data instead: set `ETH_RPC_URL` (Alchemy/Infura) and
 implement the log-decoding step in `src/data_sources/onchain.py` (the
 event topic and ABI fragment are already there), then swap the

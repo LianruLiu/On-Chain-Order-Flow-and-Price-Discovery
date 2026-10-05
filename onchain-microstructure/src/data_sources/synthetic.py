@@ -79,7 +79,7 @@ def load_dataset(n_minutes=60 * 24 * 30, s0=3200.0, seed=RNG_SEED):
     cex_price = cex_price.copy()
     for t in range(1, n_minutes):
         adj = 1 + (info[t - 1] * info_effect_bps) / 1e4
-        cex_price[t] = cex_price[t] * adj if t == 1 else cex_price[t] * adj
+        cex_price[t] = cex_price[t] * adj
     # renormalize cumulative drift so injected adj doesn't explode the level
     cex_price = cex_price / cex_price[0] * s0
 
